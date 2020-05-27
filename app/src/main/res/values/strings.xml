@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Fitness app - The exhibition</string>
+    <string name="title">Main menu</string>
+    <string name="workoutTitle">Workouts</string>
+    <string name="exercisesTitle">Exercises</string>
+    <string name="createWorkoutTitle">Create Workout</string>
+</resources>
