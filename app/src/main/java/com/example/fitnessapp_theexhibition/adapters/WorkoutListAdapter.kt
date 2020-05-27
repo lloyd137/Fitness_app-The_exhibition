@@ -1,12 +1,15 @@
 package com.example.fitnessapp_theexhibition.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import com.example.fitnessapp_theexhibition.R
+import com.example.fitnessapp_theexhibition.activities.details.WorkoutDetailScreen
 import com.example.fitnessapp_theexhibition.models.Workout
 
 class WorkoutListAdapter(private val context: Context, private val dataSource: ArrayList<Workout>) : BaseAdapter(){
@@ -28,6 +31,7 @@ class WorkoutListAdapter(private val context: Context, private val dataSource: A
 
         description = item.findViewById(R.id.workoutDescription)
         description.text = workout.description
+
         return item
     }
 
