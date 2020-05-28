@@ -7,7 +7,7 @@
     android:background="@drawable/content_block">
 
     <TextView
-        android:id="@+id/exerciseName"
+        android:id="@+id/workoutExerciseName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -20,19 +20,32 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/exerciseDescription"
+        android:id="@+id/workoutExerciseDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/workoutExerciseTime"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exerciseName" />
+        app:layout_constraintTop_toBottomOf="@+id/workoutExerciseName" />
 
     <TextView
-        android:id="@+id/exerciseMuscleGroup"
+        android:id="@+id/workoutExerciseTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/time_circle"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/workoutExerciseDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/workoutExerciseName" />
+
+    <TextView
+        android:id="@+id/workoutExerciseMuscleGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -40,5 +53,5 @@
         android:background="@drawable/round_btn"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exerciseDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/workoutExerciseDescription" />
 </androidx.constraintlayout.widget.ConstraintLayout>

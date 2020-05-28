@@ -7,6 +7,8 @@ import android.view.View
 import android.widget.Button
 import com.example.fitnessapp_theexhibition.R
 import com.example.fitnessapp_theexhibition.models.Workout
+import com.example.fitnessapp_theexhibition.models.WorkoutExercise
+import com.example.fitnessapp_theexhibition.providers.ExerciseProvider
 import com.example.fitnessapp_theexhibition.providers.WorkoutProvider
 
 class MainMenuActivity : AppCompatActivity() {
@@ -38,8 +40,18 @@ class MainMenuActivity : AppCompatActivity() {
             finish()
         }
 
-        WorkoutProvider.addWorkout(Workout("7 minutes full body", "This is a beginner friendly workout for training your full body"))
-        WorkoutProvider.addWorkout(Workout("Burn fat in 15 minutes", "Burn and fern all over with this high-intensity cardio workout"))
+        ExerciseProvider.generateExercises()
+        val workoutExercisesOne: ArrayList<WorkoutExercise> = ArrayList()
+        val workoutExerciseTwo: ArrayList<WorkoutExercise> = ArrayList()
+
+        for (exercise in ExerciseProvider.exercises) {
+            workoutExercisesOne.add(WorkoutExercise(exercise, 30))
+            workoutExerciseTwo.add(WorkoutExercise(exercise, 20))
+            println("Exercise added to both lists: " + exercise.name)
+        }
+
+        WorkoutProvider.addWorkout(Workout("Body workout medium level", "This is a beginner friendly workout for training your full body", workoutExercisesOne))
+        WorkoutProvider.addWorkout(Workout("Body workout easy level", "Burn and fern all over with this high-intensity cardio workout", workoutExerciseTwo))
 
     }
 

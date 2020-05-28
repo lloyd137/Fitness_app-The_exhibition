@@ -20,7 +20,6 @@ class WorkoutListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_workout_list)
 
-        workouts.add(Workout("Ab crusher", "This is an example for the list"))
         workouts.addAll(WorkoutProvider.workouts)
 
         workoutList = findViewById<ListView>(R.id.workoutList)
