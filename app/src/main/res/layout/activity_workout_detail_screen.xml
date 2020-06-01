@@ -21,17 +21,44 @@
 
     <ListView
         android:id="@+id/workoutExercisesList"
-        android:layout_width="409dp"
-        android:layout_height="561dp"
+        android:layout_width="413dp"
+        android:layout_height="495dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="5.0sp"
+        app:layout_constraintBottom_toTopOf="@+id/cancelWorkoutButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="5.0sp"
-        />
+        app:layout_constraintVertical_bias="0.615" />
+
+    <Button
+        android:id="@+id/startWorkoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/round_btn"
+        android:text="Start workout"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cancelWorkoutButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/cancelWorkoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/round_btn"
+        android:text="Return to Workouts"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/startWorkoutButton"
+        app:layout_constraintTop_toTopOf="@+id/startWorkoutButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
