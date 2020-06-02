@@ -1,5 +1,6 @@
 package com.example.fitnessapp_theexhibition.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -38,6 +39,10 @@ class WorkoutExecutionActivity : AppCompatActivity() {
 
             if (exerciseNumber == WorkoutProvider.findWorkoutByName(title.toString()).exercises.size) {
                 //Workout finished!
+                val intent:Intent = Intent(this, WorkoutFinishedActivity::class.java).apply {
+                    putExtra("workoutName", intent.getStringExtra("workoutName"))
+                }
+                startActivity(intent)
                 finish()
             } else {
                 //Close screen if all exercises are done.
@@ -46,8 +51,6 @@ class WorkoutExecutionActivity : AppCompatActivity() {
                 exerciseTimer(exercise)
             }
         }
-
-
     }
 
     private fun introTimer() {
