@@ -14,9 +14,10 @@ class WorkoutExecutionActivity : AppCompatActivity() {
     lateinit var exerciseTitle: TextView
     lateinit var timerTextView: TextView
 
-    var workoutRunning:Boolean = true
-    var introTimerHasRun:Boolean = false
-    var exerciseDone:Boolean = false
+    var exerciseDone: Boolean = true
+    var hasRunIntro:Boolean = false
+    var exerciseNumber: Int = -1
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,30 +26,33 @@ class WorkoutExecutionActivity : AppCompatActivity() {
         timerTextView = findViewById(R.id.workoutTimer)
         exerciseTitle = findViewById(R.id.exerciseTitle)
 
-        while (workoutRunning) {
+         //Start with a 5 second countdown
+            introTimer()
 
-            if (!introTimerHasRun) {
-                //Start with a 5 second countdown
-                introTimer()
-            }
+    }
 
-            if (introTimerHasRun) {
-                //Walk through list of exercises
-                while (workoutRunning) {
-                    var exerciseNumber: Int = -1
-                    if (exerciseDone) {
-                        exerciseNumber++
-                    }
+    private fun exercisePhase(){
+        println("Entered the exercise phase")
+        //Walk through list of exercises
 
-                    //Close screen if all exercises are done.
-                    if (exerciseNumber == WorkoutProvider.findWorkoutByName(title.toString()).exercises.size)
-                    {
-                        //Workout finished!
-                        finish()
-                    }
+            if (exerciseDone) {
+                exerciseNumber++
+                println("upped exerciseNumber")
+                println("Exercise number = $exerciseNumber, exercise list size is ${WorkoutProvider.findWorkoutByName(title.toString()).exercises.size}")
+                if (exerciseNumber == WorkoutProvider.findWorkoutByName(title.toString()).exercises.size) {
+                    //Workout finished!
+                    finish()
+                } else {
+                    var exercise: WorkoutExercise =
+                        WorkoutProvider.findWorkoutByName(title.toString()).exercises[exerciseNumber]
+                    exerciseTimer(exercise)
                 }
             }
-        }
+
+
+            //Close screen if all exercises are done.
+
+
     }
 
     private fun introTimer() {
@@ -56,13 +60,36 @@ class WorkoutExecutionActivity : AppCompatActivity() {
         timer = object : CountDownTimer(5000, 1000) {
 
             override fun onFinish() {
-                introTimerHasRun = true
+                hasRunIntro =true
+                exercisePhase()
             }
 
             override fun onTick(millisUntilFinished: Long) {
-                timerTextView.text = (millisUntilFinished / 1000 + 1).toInt().toString() + "seconds"
+                timerTextView.text = (millisUntilFinished / 1000 + 1).toInt().toString() + " seconds"
             }
         }
         timer.start()
+    }
+
+    private fun exerciseTimer(exercise: WorkoutExercise) {
+        exerciseDone = false
+        println("exerciseDone set to false")
+        exerciseTitle.text = "${exercise.exercise.name}"
+        println("exerciseTitle set to ${exercise.exercise.name}")
+        timer = object : CountDownTimer(3000, 1000) {
+            override fun onFinish() {
+                exerciseDone = true
+                println("exerciseDone set to true")
+                exercisePhase()
+            }
+
+            override fun onTick(millisUntilFinished: Long) {
+                timerTextView.text = (millisUntilFinished / 1000 + 1).toInt().toString() + " seconds"
+                println((millisUntilFinished / 1000 + 1).toInt().toString() + " seconds")
+            }
+
+        }
+        timer.start()
+        println("timer has started")
     }
 }
