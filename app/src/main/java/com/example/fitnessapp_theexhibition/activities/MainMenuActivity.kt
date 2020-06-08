@@ -15,6 +15,7 @@ class MainMenuActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout)
         setContentView(R.layout.activity_main_menu)
 
         //Views
