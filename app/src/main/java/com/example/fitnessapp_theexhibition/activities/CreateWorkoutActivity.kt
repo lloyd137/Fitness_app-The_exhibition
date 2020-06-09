@@ -30,7 +30,7 @@ class CreateWorkoutActivity : AppCompatActivity() {
 
         toExercisesListButton.setOnClickListener {
             //check if description and name fields aren't empty
-            if (workoutName.text.toString() == "" || description.text.toString() == ""){
+             if (workoutName.text.toString() == "" || description.text.toString() == ""){
                 Toast.makeText(applicationContext, getString(R.string.empty_fields), Toast.LENGTH_LONG).show()
             } else {
                 val intent:Intent = Intent(this, CreateExercisesListActivity::class.java).apply {
