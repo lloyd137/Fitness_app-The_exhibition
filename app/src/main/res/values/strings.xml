@@ -5,4 +5,7 @@
     <string name="exercisesTitle">Exercises</string>
     <string name="createWorkoutTitle">Create Workout</string>
     <string name="intro_text">Dekke bear, \n the story of a fat bears fitness journey...</string>
+    <string name="empty_name">The workout name field cannot be empty!</string>
+    <string name="empty_description">The description field cannot be empty!</string>
+    <string name="empty_fields">The fields cannot be empty !</string>
 </resources>
