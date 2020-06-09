@@ -4,4 +4,5 @@
     <string name="workoutTitle">Workouts</string>
     <string name="exercisesTitle">Exercises</string>
     <string name="createWorkoutTitle">Create Workout</string>
+    <string name="intro_text">Dekke bear, \n the story of a fat bears fitness journey...</string>
 </resources>

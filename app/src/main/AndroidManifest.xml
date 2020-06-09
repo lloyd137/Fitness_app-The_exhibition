@@ -9,13 +9,14 @@
         android:roundIcon="@mipmap/no_bear_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.IntroAnimationActivity">
+        <activity android:name=".activities.IntroTextActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.IntroAnimationActivity"/>
         <activity android:name=".activities.WorkoutFinishedActivity" />
         <activity android:name=".activities.WorkoutExecutionActivity" />
         <activity android:name=".activities.details.ExerciseDetailScreen" />
@@ -23,9 +24,7 @@
         <activity android:name=".activities.CreateWorkoutActivity" />
         <activity android:name=".activities.ExercisesListActivity" />
         <activity android:name=".activities.WorkoutListActivity" />
-        <activity android:name=".activities.MainMenuActivity">
-
-        </activity>
+        <activity android:name=".activities.MainMenuActivity"/>
     </application>
 
 </manifest>

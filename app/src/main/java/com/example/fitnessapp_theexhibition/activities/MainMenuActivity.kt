@@ -10,6 +10,7 @@ import com.example.fitnessapp_theexhibition.models.Workout
 import com.example.fitnessapp_theexhibition.models.WorkoutExercise
 import com.example.fitnessapp_theexhibition.providers.ExerciseProvider
 import com.example.fitnessapp_theexhibition.providers.WorkoutProvider
+import kotlin.system.exitProcess
 
 class MainMenuActivity : AppCompatActivity() {
 
@@ -38,7 +39,8 @@ class MainMenuActivity : AppCompatActivity() {
 
         exitButton.setOnClickListener {
             //finish activity a.k.a. close app
-            finish()
+            moveTaskToBack(true);
+            exitProcess(-1)
         }
 
         ExerciseProvider.generateExercises()
