@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -35,6 +36,9 @@ class CreateWorkoutActivity : AppCompatActivity() {
             description.setText(WorkoutCreatorProvider.currentWorkout.description)
         }
 
+        //Configure textWatcher
+        textWatcherConfiguration()
+
         cancelButton.setOnClickListener {
             finish()
         }
@@ -53,5 +57,35 @@ class CreateWorkoutActivity : AppCompatActivity() {
                  finish()
             }
         }
+    }
+    private fun textWatcherConfiguration(){
+        workoutName.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+                if (p0.toString() != "" ) {
+                    WorkoutCreatorProvider.currentWorkout.name = p0.toString()
+                }
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+        })
+
+        description.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+                if (p0.toString() != "" ) {
+                    WorkoutCreatorProvider.currentWorkout.description = p0.toString()
+                }
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+        })
     }
 }

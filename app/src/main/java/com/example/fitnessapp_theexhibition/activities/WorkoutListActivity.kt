@@ -30,6 +30,7 @@ class WorkoutListActivity : AppCompatActivity() {
         workoutList.setOnItemClickListener { parent, view, position, id ->
             val intent: Intent = Intent(this, WorkoutDetailScreen::class.java).apply {
                 putExtra("workoutName", workouts[position].name)
+                putExtra("id", position)
             }
             startActivity(intent)
         }

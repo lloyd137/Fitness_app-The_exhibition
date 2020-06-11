@@ -19,4 +19,13 @@ object WorkoutProvider {
         println("Found nothing")
         return Workout("Not found", "default", ArrayList())
     }
+
+    fun findWorkoutById(id: Int): Workout {
+        return if (workouts[id] == null) {
+            println("Found nothing")
+            Workout("Not found", "default", ArrayList())
+        } else {
+            workouts[id]
+        }
+    }
 }
