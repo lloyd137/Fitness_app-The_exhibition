@@ -1,12 +1,14 @@
-package com.example.fitnessapp_theexhibition.activities
+package com.example.fitnessapp_theexhibition.activities.creator
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.fitnessapp_theexhibition.R
+import com.example.fitnessapp_theexhibition.providers.WorkoutCreatorProvider
 
 class CreateWorkoutActivity : AppCompatActivity() {
 
@@ -24,6 +26,15 @@ class CreateWorkoutActivity : AppCompatActivity() {
         cancelButton = findViewById(R.id.returnFromCreateButton)
         toExercisesListButton = findViewById(R.id.createExerciseListButton)
 
+        //Check if previous workout wasn't finished
+        if(WorkoutCreatorProvider.currentWorkout.name != ""){
+            workoutName.setText(WorkoutCreatorProvider.currentWorkout.name)
+        }
+
+        if (WorkoutCreatorProvider.currentWorkout.description != ""){
+            description.setText(WorkoutCreatorProvider.currentWorkout.description)
+        }
+
         cancelButton.setOnClickListener {
             finish()
         }
@@ -39,6 +50,7 @@ class CreateWorkoutActivity : AppCompatActivity() {
                 }
 
                 startActivity(intent)
+                 finish()
             }
         }
     }

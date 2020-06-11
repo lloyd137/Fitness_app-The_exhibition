@@ -8,4 +8,6 @@
     <string name="empty_name">The workout name field cannot be empty!</string>
     <string name="empty_description">The description field cannot be empty!</string>
     <string name="empty_fields">The fields cannot be empty !</string>
+    <string name="empty_time">The exercise time cannot be empty!</string>
+    <string name="edit_confirm_title">Edit/Confirm workout</string>
 </resources>

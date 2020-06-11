@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import com.example.fitnessapp_theexhibition.R
+import com.example.fitnessapp_theexhibition.activities.creator.CreateWorkoutActivity
 import com.example.fitnessapp_theexhibition.models.Workout
 import com.example.fitnessapp_theexhibition.models.WorkoutExercise
 import com.example.fitnessapp_theexhibition.providers.ExerciseProvider

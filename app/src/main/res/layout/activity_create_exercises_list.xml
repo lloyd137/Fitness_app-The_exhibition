@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.CreateExercisesListActivity">
+    tools:context=".activities.creator.CreateExercisesListActivity">
 
     <View
         android:id="@+id/divider5"
@@ -129,7 +129,7 @@
         android:id="@+id/totalTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="seconds"
         app:layout_constraintBottom_toBottomOf="@+id/totalCreatorTime"
         app:layout_constraintStart_toEndOf="@+id/totalCreatorTime"
         app:layout_constraintTop_toTopOf="@+id/totalCreatorTime" />

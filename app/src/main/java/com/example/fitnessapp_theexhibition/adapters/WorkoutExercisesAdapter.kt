@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.example.fitnessapp_theexhibition.R
-import com.example.fitnessapp_theexhibition.models.Exercise
 import com.example.fitnessapp_theexhibition.models.WorkoutExercise
 
 class WorkoutExercisesAdapter(val exercises:ArrayList<WorkoutExercise>, val context: Context) : BaseAdapter() {
