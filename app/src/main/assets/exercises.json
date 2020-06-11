@@ -1,0 +1,39 @@
+{
+  "exercises": [
+    {
+      "name": "Crunches",
+      "description": "The crunch is a classic core exercise. It specifically trains your abdominal muscles, which are part of your core.",
+      "muscle_group": "Abs"
+    },
+    {
+      "name": "Push-ups",
+      "description": "Great push-up form starts with a rigid plank. Your arms should be fully extended, with your hands, elbows, and shoulders all in line, and your feet should be no more than 12 inches apart—the closer together, the more difficult the push-up, because it requires more core activation for stability.",
+      "muscle_group": "Chest"
+    },
+    {
+      "name": "Pull-ups",
+      "description": "A pull-up is an upper-body strength exercise. The pull-up is a closed-chain movement where the body is suspended by the hands and pulls up.",
+      "muscle_group": "Back"
+    },
+    {
+      "name": "Squats",
+      "description": "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up.",
+      "muscle_group": "Legs"
+    },
+    {
+      "name": "Lunges",
+      "description": "A lunge can refer to any position of the human body where one leg is positioned forward with knee bent and foot flat on the ground while the other leg is positioned behind.",
+      "muscle_group": "Legs"
+    },
+    {
+      "name": "Planks",
+      "description": "The plank (also called a front hold, hover, or abdominal bridge) is an isometric core strength exercise that involves maintaining a position similar to a push-up for the maximum possible time.",
+      "muscle_group": "Abs"
+    },
+    {
+      "name": "Flutter kicks",
+      "description": "Flutter kicks are an exercise that works the muscles of your core, specifically the lower rectus abdominal muscles, plus the hip flexors. They mimic a swimming stroke, but are performed on dry land.",
+      "muscle_group": "Abs"
+    }
+  ]
+}

@@ -44,7 +44,7 @@ class MainMenuActivity : AppCompatActivity() {
             exitProcess(-1)
         }
 
-        ExerciseProvider.generateExercises()
+        ExerciseProvider.generateExercises(this)
         val workoutExercisesOne: ArrayList<WorkoutExercise> = ArrayList()
         val workoutExerciseTwo: ArrayList<WorkoutExercise> = ArrayList()
 

@@ -20,22 +20,13 @@ class ExercisesListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exercises_list)
 
-        exercises.add(
-            Exercise(
-                "Crunches",
-                "The crunch is one of the most popular abdominal exercises. It involves the entire abs, but primarily it works the rectus abdominis muscle and also works the obliques. It allows both building six-pack abs, and tightening the belly.",
-                "Abs"
-            )
-        )
-
         exercises.addAll(ExerciseProvider.exercises)
-
         exercisesList = findViewById(R.id.exercisesList)
         exercisesAdapter = ExerciseAdapter(this, exercises)
         exercisesList.adapter = exercisesAdapter
 
         exercisesList.setOnItemClickListener { parent, view, position, id ->
-            val intent:Intent = Intent(this, ExerciseDetailScreen::class.java).apply {
+            val intent: Intent = Intent(this, ExerciseDetailScreen::class.java).apply {
                 putExtra("exercise", exercises[position].name)
             }
         }
