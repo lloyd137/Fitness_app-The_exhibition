@@ -44,18 +44,18 @@ class MainMenuActivity : AppCompatActivity() {
             exitProcess(-1)
         }
 
-        ExerciseProvider.generateExercises(this)
-        val workoutExercisesOne: ArrayList<WorkoutExercise> = ArrayList()
-        val workoutExerciseTwo: ArrayList<WorkoutExercise> = ArrayList()
 
-        for (exercise in ExerciseProvider.exercises) {
-            workoutExercisesOne.add(WorkoutExercise(exercise, 30))
-            workoutExerciseTwo.add(WorkoutExercise(exercise, 20))
-            println("Exercise added to both lists: " + exercise.name)
-        }
+//        val workoutExercisesOne: ArrayList<WorkoutExercise> = ArrayList()
+//        val workoutExerciseTwo: ArrayList<WorkoutExercise> = ArrayList()
 
-        WorkoutProvider.addWorkout(Workout("Body workout medium level", "This is a beginner friendly workout for training your full body", workoutExercisesOne))
-        WorkoutProvider.addWorkout(Workout("Body workout easy level", "Burn and fern all over with this high-intensity cardio workout", workoutExerciseTwo))
+//        for (exercise in ExerciseProvider.exercises) {
+//            workoutExercisesOne.add(WorkoutExercise(exercise, 30))
+//            workoutExerciseTwo.add(WorkoutExercise(exercise, 20))
+//            println("Exercise added to both lists: " + exercise.name)
+//        }
+//
+//        WorkoutProvider.addWorkout(Workout("Body workout medium level", "This is a beginner friendly workout for training your full body", workoutExercisesOne))
+//        WorkoutProvider.addWorkout(Workout("Body workout easy level", "Burn and fern all over with this high-intensity cardio workout", workoutExerciseTwo))
 
     }
 

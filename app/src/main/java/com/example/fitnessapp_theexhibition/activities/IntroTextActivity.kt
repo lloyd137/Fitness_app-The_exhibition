@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.fitnessapp_theexhibition.R
+import com.example.fitnessapp_theexhibition.providers.ExerciseProvider
+import com.example.fitnessapp_theexhibition.providers.WorkoutProvider
 
 class IntroTextActivity : AppCompatActivity() {
 
@@ -19,5 +21,9 @@ class IntroTextActivity : AppCompatActivity() {
             val intent: Intent = Intent(this, IntroAnimationActivity::class.java)
             startActivity(intent)
         }
+
+        //Load workouts and exercises from JSON
+        ExerciseProvider.generateExercises(this)
+        WorkoutProvider.generateWorkouts(this)
     }
 }

@@ -7,4 +7,5 @@ data class WorkoutExercise(val exercise: Exercise, var time: Int){
         Exercise(jsonObject.getJSONObject("exercise")),
         jsonObject.getInt("time")
     )
+
 }

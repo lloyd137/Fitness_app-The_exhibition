@@ -1,6 +1,12 @@
 package com.example.fitnessapp_theexhibition.providers
 
+import android.content.Context
+import com.example.fitnessapp_theexhibition.models.Exercise
 import com.example.fitnessapp_theexhibition.models.Workout
+import org.json.JSONArray
+import org.json.JSONObject
+import java.io.IOException
+import java.io.InputStream
 
 object WorkoutProvider {
 
@@ -27,5 +33,45 @@ object WorkoutProvider {
         } else {
             workouts[id]
         }
+    }
+
+    fun generateWorkouts(context: Context) {
+        workouts.clear()
+        val jsonString:String = getWorkoutsFromJSON(context)
+        println(jsonString)
+        val jsonObject: JSONObject = JSONObject(jsonString)
+        val jsonArray: JSONArray = jsonObject.getJSONArray("workouts")
+        for (i in 0 until jsonArray.length()){
+            val workout = jsonArray.getJSONObject(i)
+
+            //Transform JSONObject into WorkoutExercise
+            workouts.add(Workout(workout))
+        }
+    }
+
+    private fun getWorkoutsFromJSON(context: Context): String {
+        var jsonString: String = ""
+        var inputStream: InputStream? = null
+
+        try {
+            //Create inputStream
+            inputStream = context.assets.open("workouts.json")
+            val size = inputStream.available()
+
+            //Create buffer with the size
+            val buffer = ByteArray(size)
+
+            //Read data from inputStream into the buffer
+            inputStream.read(buffer)
+
+            //Create a json string
+            jsonString = String(buffer)
+            return jsonString
+        } catch (ioException: IOException) {
+            ioException.printStackTrace()
+        } finally {
+            inputStream?.close()
+        }
+        return jsonString
     }
 }
