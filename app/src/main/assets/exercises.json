@@ -59,6 +59,21 @@
       "name": "Wall sit",
       "description": "Sit against a wall where your knee's are have a 90 degree corner. You'll work on all parts of your legs while also increasing your leg's muscle endurance.",
       "muscle_group": "Legs"
+    },
+    {
+      "name": "Toe touches",
+      "description": "Put your legs in the air, and try to touch your toes while keeping your legs straight.",
+      "muscle_group": "Abs"
+    },
+    {
+      "name": "Reverse crunch",
+      "description": "Instead of making bringing your upper body up. Bring you Legs towards your Upper body while laying down. Push your hands against the ground to maintain stability.",
+      "muscle_group": "Abs"
+    },
+    {
+      "name": "Leg raises",
+      "description": "Lie down and bring you legs up while keeping them straight and holding the rest of your body on the ground.",
+      "muscle_group": "Abs"
     }
   ]
 }
