@@ -9,16 +9,17 @@
         android:roundIcon="@mipmap/no_bear_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.creator.EditConfirmWorkoutActivity"></activity>
-        <activity android:name=".activities.creator.CreateExercisesListActivity" />
-        <activity android:name=".activities.IntroTextActivity">
+        <activity android:name=".activities.intro.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.IntroAnimationActivity" />
+        <activity android:name=".activities.creator.EditConfirmWorkoutActivity" />
+        <activity android:name=".activities.creator.CreateExercisesListActivity" />
+        <activity android:name=".activities.intro.IntroTextActivity"/>
+        <activity android:name=".activities.intro.IntroAnimationActivity" />
         <activity android:name=".activities.WorkoutFinishedActivity" />
         <activity android:name=".activities.WorkoutExecutionActivity" />
         <activity android:name=".activities.details.ExerciseDetailScreen" />

@@ -21,6 +21,7 @@ object ExerciseProvider {
         for (i in 0 until jsonArray.length()){
             val exercise = jsonArray.getJSONObject(i)
 
+            println("Number of the array: $i")
             //Transform JSONObject into WorkoutExercise
             exercises.add(Exercise(exercise))
         }

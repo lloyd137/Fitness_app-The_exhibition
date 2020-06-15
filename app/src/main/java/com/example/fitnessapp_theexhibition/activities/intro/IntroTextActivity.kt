@@ -1,4 +1,4 @@
-package com.example.fitnessapp_theexhibition.activities
+package com.example.fitnessapp_theexhibition.activities.intro
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

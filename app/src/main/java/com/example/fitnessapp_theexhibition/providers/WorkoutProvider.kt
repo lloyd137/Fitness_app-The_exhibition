@@ -38,7 +38,6 @@ object WorkoutProvider {
     fun generateWorkouts(context: Context) {
         workouts.clear()
         val jsonString:String = getWorkoutsFromJSON(context)
-        println(jsonString)
         val jsonObject: JSONObject = JSONObject(jsonString)
         val jsonArray: JSONArray = jsonObject.getJSONArray("workouts")
         for (i in 0 until jsonArray.length()){

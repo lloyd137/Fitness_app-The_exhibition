@@ -34,27 +34,15 @@ class EditConfirmWorkoutActivity : AppCompatActivity() {
         saveButton = findViewById(R.id.saveWorkout)
         saveButton.setOnClickListener {
             //Add workout to workout provider
-            println("Workoutprovider size before: ${WorkoutProvider.workouts.size}")
-
             val list: ArrayList<WorkoutExercise> = ArrayList(WorkoutCreatorProvider.currentExercisesList)
             val save = Workout(WorkoutCreatorProvider.currentWorkout.name, WorkoutCreatorProvider.currentWorkout.description, list)
             WorkoutProvider.addWorkout(save.copy())
-            println("Workoutprovider size after: ${WorkoutProvider.workouts.size}")
 
-            println(
-                "Workout title: ${WorkoutProvider.workouts.last().name} " +
-                        "Workout description: ${WorkoutProvider.workouts.last().description}" +
-                        "Amount of exercises: ${WorkoutProvider.workouts.last().exercises.size}"
-            )
+            //Write workout to JSON (save)
+            WorkoutCreatorProvider.writeToLocalStorage(save, this)
 
             //Empty the current custom workout for next make
             WorkoutCreatorProvider.clearWorkout()
-
-            println(
-                "Workout title: ${WorkoutProvider.workouts.last().name} " +
-                        "Workout description: ${WorkoutProvider.workouts.last().description}" +
-                        "Amount of exercises: ${WorkoutProvider.workouts.last().exercises.size}"
-            )
 
             finish()
         }

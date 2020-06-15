@@ -1,4 +1,4 @@
-package com.example.fitnessapp_theexhibition.activities
+package com.example.fitnessapp_theexhibition.activities.intro
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.VideoView
 import com.example.fitnessapp_theexhibition.R
+import com.example.fitnessapp_theexhibition.activities.MainMenuActivity
 
 class IntroAnimationActivity : AppCompatActivity() {
     lateinit var videoView: VideoView
