@@ -26,14 +26,39 @@
       "muscle_group": "Legs"
     },
     {
-      "name": "Planks",
+      "name": "Plank",
       "description": "The plank (also called a front hold, hover, or abdominal bridge) is an isometric core strength exercise that involves maintaining a position similar to a push-up for the maximum possible time.",
+      "muscle_group": "Abs"
+    },
+    {
+      "name": "Left side plank",
+      "description": "The same principle as 'The plank', but this time you'll only lean on your left arm where your left side will be just above the ground and your right side to the sky's direction.",
+      "muscle_group": "Abs"
+    },
+    {
+      "name": "Right side plank",
+      "description": "The same principle as 'The plank', but this time you'll lean on your right arm where your right side will be just above the ground and your left side to the sky's direction.",
       "muscle_group": "Abs"
     },
     {
       "name": "Flutter kicks",
       "description": "Flutter kicks are an exercise that works the muscles of your core, specifically the lower rectus abdominal muscles, plus the hip flexors. They mimic a swimming stroke, but are performed on dry land.",
       "muscle_group": "Abs"
+    },
+    {
+      "name": "Superman",
+      "description": "Work your lower back — and the whole backside of your body — with a superman. Go as slowly as you can here to really reap the benefits of this move.",
+      "muscles_group": "Lower back"
+    },
+    {
+      "name": "Bicycle crunch",
+      "description": "You'll work on your core with this exercise. You make the movement of a crunch but your left leg will come towards your right elbow and your right leg will come towards left elbow",
+      "muscle_group": "Abs"
+    },
+    {
+      "name": "Wall sit",
+      "description": "Sit against a wall where your knee's are have a 90 degree corner. You'll work on all parts of your legs while also increasing your leg's muscle endurance.",
+      "muscle_group": "Legs"
     }
   ]
 }
