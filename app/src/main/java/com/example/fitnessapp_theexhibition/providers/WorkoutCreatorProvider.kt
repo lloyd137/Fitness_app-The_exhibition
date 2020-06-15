@@ -29,7 +29,6 @@ object WorkoutCreatorProvider {
         val jsonString:String = preferences.getString("custom", "[]")
         val jsonArray = JSONArray(jsonString)
 
-        println(jsonString)
         for (i in 0 until jsonArray.length()){
             val workout = jsonArray.getJSONObject(i)
 
@@ -44,7 +43,6 @@ object WorkoutCreatorProvider {
 
         val gsonPretty = GsonBuilder().setPrettyPrinting().create()
         val jsonString: String = gsonPretty.toJson(customWorkouts)
-        println(jsonString)
         val preferences = context.getSharedPreferences("custom", Context.MODE_PRIVATE)
         preferences.edit().putString("custom", jsonString).apply()
     }

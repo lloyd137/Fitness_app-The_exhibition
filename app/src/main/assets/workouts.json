@@ -377,6 +377,82 @@
           "time": 30
         }
       ]
+    },
+    {
+      "description": "Fun plank workout for finishing your workout.",
+      "name": "Plank finisher",
+      "workout_exercises": [
+        {
+          "exercise": {
+            "description": "The plank (also called a front hold, hover, or abdominal bridge) is an isometric core strength exercise that involves maintaining a position similar to a push-up for the maximum possible time.",
+            "muscle_group": "Abs",
+            "name": "Plank"
+          },
+          "time": 30
+        },
+        {
+          "exercise": {
+            "description": "",
+            "muscle_group": "",
+            "name": "Break"
+            },
+          "time": 30
+          },
+        {
+          "exercise": {
+          "description": "The same principle as 'The plank', but this time you'll only lean on your left arm where your left side will be just above the ground and your right side to the sky's direction.",
+          "muscle_group": "Abs",
+          "name": "Left side plank"
+        },
+        "time": 30
+        },
+        {
+          "exercise": {
+            "description": "",
+            "muscle_group": "",
+            "name": "Break"
+          },
+          "time": 30
+        },
+        {
+          "exercise": {
+            "description": "The same principle as The plank, but this time you'll lean on your right arm where your right side will be just above the ground and your left side to the sky's direction.",
+           "muscle_group": "Abs",
+            "name": "Right side plank"
+          },
+          "time": 30
+        }
+      ]
+    },
+    {
+      "description": "Let's train me chest, woohoo!",
+      "name": "Chest workout 01",
+      "workout_exercises": [
+        {
+          "exercise": {
+            "description": "Great push-up form starts with a rigid plank. Your arms should be fully extended, with your hands, elbows, and shoulders all in line, and your feet should be no more than 12 inches apart—the closer together, the more difficult the push-up, because it requires more core activation for stability.",
+            "muscle_group": "Chest",
+            "name": "Push-ups"
+          },
+          "time": 30
+        },
+        {
+          "exercise": {
+            "description": "",
+            "muscle_group": "",
+            "name": "Break"
+          },
+          "time": 30
+        },
+        {
+          "exercise": {
+            "description": "A squat is a strength exercise in which the trainee lowers their hips from a standing position and then stands back up.",
+            "muscle_group": "Legs",
+            "name": "Squats"
+          },
+          "time": 30
+        }
+      ]
     }
   ]
 }
