@@ -6,7 +6,7 @@ import org.json.JSONObject
 data class Workout(
     var name: String,
     var description: String,
-    val exercises: ArrayList<WorkoutExercise>
+    val workout_exercises: ArrayList<WorkoutExercise>
 ) {
     constructor(json: JSONObject) : this(
         json.getString("name"),

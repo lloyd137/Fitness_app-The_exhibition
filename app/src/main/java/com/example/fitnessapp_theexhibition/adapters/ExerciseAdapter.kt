@@ -30,7 +30,7 @@ class ExerciseAdapter(private val context: Context, private var exercises: Array
         description.text = exercise.description
 
         muscleGroup = item.findViewById(R.id.exerciseMuscleGroup)
-        muscleGroup.text = exercise.muscleGroup
+        muscleGroup.text = exercise.muscle_group
 
         return item
     }

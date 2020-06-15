@@ -35,7 +35,7 @@ class WorkoutCreatorAdapter (val exercises:ArrayList<Exercise>, val context: Con
 
         title.text = exercise.name
         description.text = exercise.description
-        muscleGroup.text = exercise.muscleGroup
+        muscleGroup.text = exercise.muscle_group
 
         addButton.setOnClickListener {
             //Exercise add

@@ -22,7 +22,7 @@ class WorkoutDetailScreen : AppCompatActivity() {
         val exercisesList:ListView = findViewById(R.id.workoutExercisesList)
         val workoutName = intent.getStringExtra("workoutName")
         val workoutId = intent.getIntExtra("id", -1)
-        val adapter = WorkoutExercisesAdapter(WorkoutProvider.findWorkoutById(workoutId).exercises, this)
+        val adapter = WorkoutExercisesAdapter(WorkoutProvider.findWorkoutById(workoutId).workout_exercises, this)
         exercisesList.adapter = adapter
 
         println(adapter.exercises.size)

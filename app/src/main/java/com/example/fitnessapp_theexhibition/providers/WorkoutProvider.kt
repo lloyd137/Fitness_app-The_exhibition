@@ -1,7 +1,6 @@
 package com.example.fitnessapp_theexhibition.providers
 
 import android.content.Context
-import com.example.fitnessapp_theexhibition.models.Exercise
 import com.example.fitnessapp_theexhibition.models.Workout
 import org.json.JSONArray
 import org.json.JSONObject
@@ -11,6 +10,7 @@ import java.io.InputStream
 object WorkoutProvider {
 
     val workouts = ArrayList<Workout>()
+
 
     fun addWorkout(workout: Workout) {
         workouts.add(workout)
@@ -46,6 +46,9 @@ object WorkoutProvider {
             //Transform JSONObject into WorkoutExercise
             workouts.add(Workout(workout))
         }
+
+        WorkoutCreatorProvider.getFromLocalStorage(context)
+        workouts.addAll(WorkoutCreatorProvider.customWorkouts)
     }
 
     private fun getWorkoutsFromJSON(context: Context): String {

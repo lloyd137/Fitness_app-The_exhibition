@@ -39,7 +39,7 @@ class EditWorkoutAdapter(val exercises: ArrayList<WorkoutExercise>, val context:
 
         title.text = exercise.exercise.name
         description.text = exercise.exercise.description
-        muscleGroup.text = exercise.exercise.muscleGroup
+        muscleGroup.text = exercise.exercise.muscle_group
         time.text = exercise.time.toString() + "Sec"
 
         deleteButton.setOnClickListener {

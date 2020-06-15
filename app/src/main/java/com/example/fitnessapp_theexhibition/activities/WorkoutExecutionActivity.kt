@@ -37,7 +37,7 @@ class WorkoutExecutionActivity : AppCompatActivity() {
         if (exerciseDone) {
             exerciseNumber++
 
-            if (exerciseNumber == WorkoutProvider.findWorkoutByName(title.toString()).exercises.size) {
+            if (exerciseNumber == WorkoutProvider.findWorkoutByName(title.toString()).workout_exercises.size) {
                 //Workout finished!
                 val intent:Intent = Intent(this, WorkoutFinishedActivity::class.java).apply {
                     putExtra("workoutName", intent.getStringExtra("workoutName"))
@@ -47,7 +47,7 @@ class WorkoutExecutionActivity : AppCompatActivity() {
             } else {
                 //Close screen if all exercises are done.
                 var exercise: WorkoutExercise =
-                    WorkoutProvider.findWorkoutByName(title.toString()).exercises[exerciseNumber]
+                    WorkoutProvider.findWorkoutByName(title.toString()).workout_exercises[exerciseNumber]
                 exerciseTimer(exercise)
             }
         }
