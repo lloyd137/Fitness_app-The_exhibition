@@ -13,6 +13,15 @@ data class Workout(
         json.getString("description"),
         getExercisesFromJSON(json)
     )
+
+    fun getTotalTime(): Int {
+        var total:Int = 0
+        for (exercise in workout_exercises){
+            total += exercise.time
+        }
+
+        return total
+    }
 }
 
 private fun getExercisesFromJSON(json: JSONObject): ArrayList<WorkoutExercise> {
@@ -28,4 +37,6 @@ private fun getExercisesFromJSON(json: JSONObject): ArrayList<WorkoutExercise> {
 
     return jsonExercises
 }
+
+
 

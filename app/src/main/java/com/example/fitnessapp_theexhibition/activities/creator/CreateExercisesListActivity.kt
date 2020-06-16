@@ -102,7 +102,11 @@ class CreateExercisesListActivity : AppCompatActivity() {
         val minutes: Int = totalWorkoutTime / 60
         val secondsLeft: Int = totalWorkoutTime % 60
 
-        return "$minutes:$secondsLeft"
+        return if (secondsLeft > 10) {
+            "$minutes:$secondsLeft"
+        } else {
+            "$minutes:0$secondsLeft"
+        }
     }
 
     fun updateData(){

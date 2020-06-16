@@ -24,6 +24,7 @@ class MainMenuActivity : AppCompatActivity() {
         val workoutButtonListButton: Button = findViewById(R.id.workoutListButton)
         val exercisesListButton: Button = findViewById(R.id.exercisesListButton)
         val createWorkoutButton: Button = findViewById(R.id.createWorkoutButton)
+        val progressButton: Button = findViewById(R.id.progressButton)
         val exitButton: Button = findViewById(R.id.exitButton)
 
         workoutButtonListButton.setOnClickListener { view ->
@@ -38,25 +39,20 @@ class MainMenuActivity : AppCompatActivity() {
             onCreateWorkoutButtonClick(view)
         }
 
+        progressButton.setOnClickListener { view ->
+            onProgressButtonClick(view)
+        }
+
         exitButton.setOnClickListener {
             //finish activity a.k.a. close app
             moveTaskToBack(true);
             exitProcess(-1)
         }
 
+    }
 
-//        val workoutExercisesOne: ArrayList<WorkoutExercise> = ArrayList()
-//        val workoutExerciseTwo: ArrayList<WorkoutExercise> = ArrayList()
-
-//        for (exercise in ExerciseProvider.exercises) {
-//            workoutExercisesOne.add(WorkoutExercise(exercise, 30))
-//            workoutExerciseTwo.add(WorkoutExercise(exercise, 20))
-//            println("Exercise added to both lists: " + exercise.name)
-//        }
-//
-//        WorkoutProvider.addWorkout(Workout("Body workout medium level", "This is a beginner friendly workout for training your full body", workoutExercisesOne))
-//        WorkoutProvider.addWorkout(Workout("Body workout easy level", "Burn and fern all over with this high-intensity cardio workout", workoutExerciseTwo))
-
+    private fun onProgressButtonClick(button: View){
+        startActivity(Intent(this, ProgressActivity::class.java))
     }
 
     private fun onWorkoutListClick(button: View) {
