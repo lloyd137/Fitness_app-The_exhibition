@@ -2,11 +2,17 @@ package com.example.fitnessapp_theexhibition.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import com.example.fitnessapp_theexhibition.R
 
 class WorkoutFinishedActivity : AppCompatActivity() {
+
+    lateinit var bearImage:ImageView
+    lateinit var timer:CountDownTimer
+    var image:Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,9 +22,27 @@ class WorkoutFinishedActivity : AppCompatActivity() {
         val finishButton: Button = findViewById(R.id.finishWorkoutbutton)
         workoutName.text = intent.getStringExtra("workoutName")
 
+        bearImage = findViewById(R.id.bearFinish)
+
+        timer = object : CountDownTimer(2147483647, 1000) {
+
+            override fun onFinish() {
+            }
+
+            override fun onTick(millisUntilFinished: Long) {
+                if (image){
+                    image = false
+                    bearImage.setImageResource(R.drawable.workout_done_normal)
+                } else {
+                    image = true
+                    bearImage.setImageResource(R.drawable.workout_complete)
+                }
+            }
+        }
+        timer.start()
+
         finishButton.setOnClickListener {
             finish()
         }
-
     }
 }
