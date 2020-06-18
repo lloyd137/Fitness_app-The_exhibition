@@ -61,11 +61,16 @@ class WorkoutFinishedActivity : AppCompatActivity() {
         if (preferences.contains("totalTime")) {
             var totalTime = preferences.getInt("totalTime", -1)
 
+            println("key exists, old value = $totalTime, elevation = $elevation")
+            println("totaltime = ${totalTime + elevation}")
+
             //Overwrite old value with new value
             preferences.edit().putInt("totalTime", totalTime + elevation).apply()
         } else {
             //Make new key value pair
             preferences.edit().putInt("totalTime", elevation).apply()
+
+            println("Made new pair, new value is $elevation")
         }
 
         //Update amount of workouts
@@ -73,10 +78,14 @@ class WorkoutFinishedActivity : AppCompatActivity() {
             //Update value
             var totalWorkouts = preferences.getInt("totalWorkouts", -1)
 
+            println("old value totalWorkouts = $totalWorkouts, New should be ${totalWorkouts + 1}")
+
             //Overwrite
             preferences.edit().putInt("totalWorkouts", totalWorkouts + 1).apply()
         } else {
-            preferences.edit().putInt("totalTime", 1).apply()
+            preferences.edit().putInt("totalWorkouts", 1).apply()
+
+            println("key doesn't exist yet, new value = 1")
         }
     }
 }

@@ -65,7 +65,7 @@ class CreateExercisesListActivity : AppCompatActivity() {
         }
 
         //Rest button
-        addRest.setOnClickListener {
+        addRest.setOnClickListener { 
             //Check if exercise time is configured
             if (seconds.text.toString() == "") {
                 //Scenario one: Empty time field

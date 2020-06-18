@@ -44,14 +44,22 @@ class MainMenuActivity : AppCompatActivity() {
         }
 
         exitButton.setOnClickListener {
-            //finish activity a.k.a. close app
-            moveTaskToBack(true);
-            exitProcess(-1)
+            closeApp()
         }
-
     }
 
-    private fun onProgressButtonClick(button: View){
+    override fun onBackPressed() {
+        super.onBackPressed()
+        closeApp()
+    }
+
+    private fun closeApp() {
+        //finish activity a.k.a. close app
+        moveTaskToBack(true);
+        exitProcess(-1)
+    }
+
+    private fun onProgressButtonClick(button: View) {
         startActivity(Intent(this, ProgressActivity::class.java))
     }
 
