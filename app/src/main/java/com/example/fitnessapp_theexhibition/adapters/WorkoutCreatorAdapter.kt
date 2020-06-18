@@ -4,6 +4,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.Animation.AnimationListener
+import android.view.animation.AnimationUtils
 import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.TextView
@@ -14,10 +17,12 @@ import com.example.fitnessapp_theexhibition.models.Exercise
 import com.example.fitnessapp_theexhibition.models.WorkoutExercise
 import com.example.fitnessapp_theexhibition.providers.WorkoutCreatorProvider
 
-class WorkoutCreatorAdapter (val exercises:ArrayList<Exercise>, val context: Context) : BaseAdapter() {
 
-    private val inflater: LayoutInflater
-            = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+class WorkoutCreatorAdapter(val exercises: ArrayList<Exercise>, val context: Context) :
+    BaseAdapter() {
+
+    private val inflater: LayoutInflater =
+        context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
     private lateinit var title: TextView
     private lateinit var description: TextView
@@ -39,29 +44,40 @@ class WorkoutCreatorAdapter (val exercises:ArrayList<Exercise>, val context: Con
 
         addButton.setOnClickListener {
             //Exercise add
-                if (WorkoutCreatorProvider.exerciseDuration.toString() == "") {
-                    //Scenario one: Empty time field
-                    Toast.makeText(
-                        context,
-                        context.getString(R.string.empty_time),
-                        Toast.LENGTH_SHORT
-                    ).show()
-                } else {
-                    //Scenario two: add exercise with put in time
-                    WorkoutCreatorProvider.currentExercisesList.add(
-                        WorkoutExercise(
-                            exercise,
-                            WorkoutCreatorProvider.exerciseDuration
-                        )
+            if (WorkoutCreatorProvider.exerciseDuration.toString() == "") {
+                //Scenario one: Empty time field
+                Toast.makeText(
+                    context,
+                    context.getString(R.string.empty_time),
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                //Scenario two: add exercise with put in time
+                WorkoutCreatorProvider.currentExercisesList.add(
+                    WorkoutExercise(
+                        exercise,
+                        WorkoutCreatorProvider.exerciseDuration
                     )
+                )
+                val animation = AnimationUtils.loadAnimation(context, R.anim.dissapear)
+                it.startAnimation(animation)
 
-                    //Update fields in parent
-                    (context as CreateExercisesListActivity).updateData()
-                }
+                animation.setAnimationListener(object : AnimationListener {
+                    override fun onAnimationStart(arg0: Animation) {}
+                    override fun onAnimationRepeat(arg0: Animation) {}
+                    override fun onAnimationEnd(arg0: Animation) {
+                        it.clearAnimation()
+                    }
+                })
+
+                //Update fields in parent
+                (context as CreateExercisesListActivity).updateData()
+            }
         }
 
         return item
     }
+
 
     override fun getItem(position: Int): Any {
         return exercises[position]
