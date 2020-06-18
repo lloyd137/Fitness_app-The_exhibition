@@ -10,7 +10,9 @@ import com.example.fitnessapp_theexhibition.R
 
 class ProgressActivity : AppCompatActivity() {
 
-    lateinit var activeTime: TextView
+    lateinit var activeTimeHours: TextView
+    lateinit var activeTimeMinutes: TextView
+    lateinit var activeTimeSeconds: TextView
     lateinit var totalWorkout: TextView
     lateinit var preferences: SharedPreferences
     lateinit var returnButton: Button
@@ -19,31 +21,43 @@ class ProgressActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_progress)
 
-        activeTime = findViewById(R.id.activeTime)
+        activeTimeHours = findViewById(R.id.activeTimeHours)
+        activeTimeMinutes = findViewById(R.id.activeTimeMinutes)
+        activeTimeSeconds = findViewById(R.id.activeTimeSeconds)
         totalWorkout = findViewById(R.id.totalWorkouts)
         preferences = getSharedPreferences("progress", Context.MODE_PRIVATE)
         returnButton = findViewById(R.id.returnButton)
 
-        activeTime.text = getTimeStamp(preferences.getInt("totalTime", 0))
+        setTime()
         totalWorkout.text = preferences.getInt("totalWorkouts", 0).toString()
         returnButton.setOnClickListener {
             finish()
         }
     }
 
-    private fun getTimeStamp(time: Int): String {
+    private fun setTime() {
+
+        val totalTime = preferences.getInt("totalTime", 0)
+
+        val hours: Int = totalTime / 3600
+        val remainingTime: Int = totalTime - hours * 3600
+        val minutes: Int = remainingTime / 60
+        val seconds: Int = remainingTime % 60
+
+        activeTimeHours.text = "$hours Hours"
+        activeTimeMinutes.text = "$minutes Minutes"
+        activeTimeSeconds.text = "$seconds Seconds"
+    }
+
+    private fun getActiveHours(time: Int): String {
+
+        val hours: Int = time / 3600
         val minutes: Int = time / 60
         val secondsLeft: Int = time % 60
 
-
         return if (secondsLeft > 10) {
-            println(
-                "$minutes:$secondsLeft"
-            )
             "$minutes:$secondsLeft"
         } else {
-            println(            "$minutes:0$secondsLeft"
-            )
             "$minutes:0$secondsLeft"
         }
     }

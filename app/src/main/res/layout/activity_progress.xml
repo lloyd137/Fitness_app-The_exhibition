@@ -68,7 +68,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ac" />
 
     <TextView
-        android:id="@+id/activeTime"
+        android:id="@+id/activeTimeHours"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="activeTime"
@@ -95,5 +95,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/activeTimeMinutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/activeTimeHours"
+        app:layout_constraintTop_toBottomOf="@+id/activeTimeHours" />
+
+    <TextView
+        android:id="@+id/activeTimeSeconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/activeTimeMinutes"
+        app:layout_constraintTop_toBottomOf="@+id/activeTimeMinutes" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
