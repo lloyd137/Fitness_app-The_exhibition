@@ -52,7 +52,7 @@ class CreateExercisesListActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if (p0.toString() != "" ) {
+                if (p0.toString() != "") {
                     WorkoutCreatorProvider.exerciseDuration = p0.toString().toInt()
                 }
             }
@@ -84,14 +84,15 @@ class CreateExercisesListActivity : AppCompatActivity() {
                 )
                 updateData()
             }
+        }
 
-            //Next activity button
-            editConfirmButton.setOnClickListener {
-                startActivity(Intent(this, EditConfirmWorkoutActivity::class.java))
-                finish()
-            }
+        //Next activity button
+        editConfirmButton.setOnClickListener {
+            startActivity(Intent(this, EditConfirmWorkoutActivity::class.java))
+            finish()
         }
     }
+
 
     private fun getTotalTime(): String {
         var totalWorkoutTime: Int = 0
@@ -109,8 +110,9 @@ class CreateExercisesListActivity : AppCompatActivity() {
         }
     }
 
-    fun updateData(){
+    fun updateData() {
         totalAmount.text = WorkoutCreatorProvider.currentExercisesList.size.toString()
         totalTime.text = getTotalTime()
     }
 }
+

@@ -47,12 +47,12 @@
 
     <ImageView
         android:id="@+id/bearFinish"
-        android:layout_width="0dp"
+        android:layout_width="500dp"
         android:layout_height="0dp"
         android:layout_marginTop="56dp"
         android:layout_marginBottom="56dp"
         android:background="#FFFFFF"
-        android:scaleType="fitXY"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toTopOf="@+id/finishWorkoutbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
