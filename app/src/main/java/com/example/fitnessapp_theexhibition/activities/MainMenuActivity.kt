@@ -1,5 +1,6 @@
 package com.example.fitnessapp_theexhibition.activities
 
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -49,14 +50,25 @@ class MainMenuActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        super.onBackPressed()
         closeApp()
     }
 
     private fun closeApp() {
-        //finish activity a.k.a. close app
-        moveTaskToBack(true);
-        exitProcess(-1)
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Are you sure you want to quit?")
+        builder.setMessage("Click Yes to close the app. Click No to return to the main menu.")
+
+        builder.setPositiveButton("Yes") { dialog, which ->
+            //finish activity a.k.a. close app
+            moveTaskToBack(true);
+            exitProcess(-1)
+        }
+
+        builder.setNegativeButton("No") { dialog, which ->
+        }
+
+        builder.show()
     }
 
     private fun onProgressButtonClick(button: View) {
