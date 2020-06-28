@@ -19,6 +19,7 @@ class WorkoutExecutionActivity : AppCompatActivity() {
     lateinit var timerTextView: TextView
     lateinit var video: VideoView
     lateinit var image: ImageView
+    lateinit var videoText: TextView
 
     var exerciseDone: Boolean = true
     var hasRunIntro: Boolean = false
@@ -32,7 +33,9 @@ class WorkoutExecutionActivity : AppCompatActivity() {
         timerTextView = findViewById(R.id.workoutTimer)
         exerciseTitle = findViewById(R.id.exerciseTitle)
         video = findViewById(R.id.exerciseVideo)
+        video.visibility = View.INVISIBLE
         image = findViewById(R.id.exerciseImage)
+        videoText = findViewById(R.id.videoText)
 
         //Start with a 5 second countdown
         introTimer()
@@ -161,9 +164,14 @@ class WorkoutExecutionActivity : AppCompatActivity() {
             }
 
             video.start()
+
             video.setOnPreparedListener {
+                it.setVolume(0.toFloat(),0.toFloat())
                 it.isLooping = true
             }
+
+            //Set text
+            videoText.text = exercise + " example"
         }
     }
 }
