@@ -33,6 +33,10 @@ class WorkoutExercisesAdapter(val exercises:ArrayList<WorkoutExercise>, val cont
         muscleGroup.text = exercise.exercise.muscle_group
         time.text = exercise.time.toString() + "Sec"
 
+        if (exercise.exercise.muscle_group == ""){
+            muscleGroup.visibility = View.INVISIBLE
+        }
+
         return item
     }
 

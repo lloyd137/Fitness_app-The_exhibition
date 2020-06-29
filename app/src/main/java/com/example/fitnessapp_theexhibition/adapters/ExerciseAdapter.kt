@@ -32,6 +32,10 @@ class ExerciseAdapter(private val context: Context, private var exercises: Array
         muscleGroup = item.findViewById(R.id.exerciseMuscleGroup)
         muscleGroup.text = exercise.muscle_group
 
+        if (exercise.muscle_group == ""){
+            muscleGroup.visibility = View.INVISIBLE
+        }
+
         return item
     }
 
