@@ -25,7 +25,6 @@ class WorkoutExecutionActivity : AppCompatActivity() {
     var hasRunIntro: Boolean = false
     var exerciseNumber: Int = -1
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_workout_execution)
@@ -100,7 +99,10 @@ class WorkoutExecutionActivity : AppCompatActivity() {
 
     private fun getExerciseExample(exercise: String) {
         //Check if you need to get image or video
-        if (exercise == "Left side plank" || exercise == "Right side plank" || exercise == "Plank" || exercise == "Wall sit") {
+
+        videoText.visibility = View.VISIBLE
+
+        if (exercise == "Left side plank" || exercise == "Right side plank" || exercise == "Plank" || exercise == "Wall sit" || exercise == "Rest") {
             //Make video view invisible
             video.visibility = View.INVISIBLE
             image.visibility = View.VISIBLE
@@ -119,6 +121,17 @@ class WorkoutExecutionActivity : AppCompatActivity() {
                 "Wall sit" -> {
                     image.setImageResource(R.drawable.dekke_bear_wall_sit)
                 }
+                "Rest" -> {
+                    image.setImageResource(R.drawable.dekke_bear_break)
+                }
+            }
+
+            if (exercise == "Rest") {
+                videoText.visibility = View.INVISIBLE
+
+            } else {
+                //Set text
+                videoText.text = exercise + " example"
             }
 
         } else {
@@ -166,7 +179,7 @@ class WorkoutExecutionActivity : AppCompatActivity() {
             video.start()
 
             video.setOnPreparedListener {
-                it.setVolume(0.toFloat(),0.toFloat())
+                it.setVolume(0.toFloat(), 0.toFloat())
                 it.isLooping = true
             }
 

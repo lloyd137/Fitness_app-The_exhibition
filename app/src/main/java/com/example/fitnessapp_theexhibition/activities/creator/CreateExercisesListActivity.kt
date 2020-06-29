@@ -78,7 +78,7 @@ class CreateExercisesListActivity : AppCompatActivity() {
                 //Scenario two: Add break to exercises list
                 WorkoutCreatorProvider.currentExercisesList.add(
                     WorkoutExercise(
-                        Exercise("Break", "", ""),
+                        Exercise("Rest", "", ""),
                         seconds.text.toString().toInt()
                     )
                 )

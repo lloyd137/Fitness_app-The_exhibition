@@ -202,7 +202,7 @@
         },
         {
           "exercise": {
-            "name": "Break",
+            "name": "Rest",
             "description": "",
             "muscle_group": ""
           },
@@ -218,7 +218,7 @@
         },
         {
           "exercise": {
-            "name": "Break",
+            "name": "Rest",
             "description": "",
             "muscle_group": ""
           },
@@ -234,7 +234,7 @@
         },
         {
           "exercise": {
-            "name": "Break",
+            "name": "Rest",
             "description": "",
             "muscle_group": ""
           },
@@ -250,7 +250,7 @@
         },
         {
           "exercise": {
-            "name": "Break",
+            "name": "Rest",
             "description": "",
             "muscle_group": ""
           },
@@ -266,7 +266,7 @@
         },
         {
           "exercise": {
-            "name": "Break",
+            "name": "Rest",
             "description": "",
             "muscle_group": ""
           },
@@ -282,7 +282,7 @@
         },
         {
           "exercise": {
-            "name": "Break",
+            "name": "Rest",
             "description": "",
             "muscle_group": ""
           },
@@ -298,7 +298,7 @@
         },
         {
           "exercise": {
-            "name": "Break",
+            "name": "Rest",
             "description": "",
             "muscle_group": ""
           },
@@ -314,7 +314,7 @@
         },
         {
           "exercise": {
-            "name": "Break",
+            "name": "Rest",
             "description": "",
             "muscle_group": ""
           },
@@ -330,7 +330,7 @@
         },
         {
           "exercise": {
-            "name": "Break",
+            "name": "Rest",
             "description": "",
             "muscle_group": ""
           },
@@ -346,7 +346,7 @@
         },
         {
           "exercise": {
-            "name": "Break",
+            "name": "Rest",
             "description": "",
             "muscle_group": "Abs"
           },
@@ -362,7 +362,7 @@
         },
         {
           "exercise": {
-            "name": "Break",
+            "name": "Rest",
             "description": "",
             "muscle_group": ""
           },
@@ -394,7 +394,7 @@
           "exercise": {
             "description": "",
             "muscle_group": "",
-            "name": "Break"
+            "name": "Rest"
             },
           "time": 30
           },
@@ -410,7 +410,7 @@
           "exercise": {
             "description": "",
             "muscle_group": "",
-            "name": "Break"
+            "name": "Rest"
           },
           "time": 30
         },
@@ -440,7 +440,7 @@
           "exercise": {
             "description": "",
             "muscle_group": "",
-            "name": "Break"
+            "name": "Rest"
           },
           "time": 30
         },
